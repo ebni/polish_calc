@@ -3,7 +3,6 @@
 #include <gsl/gsl_matrix.h>
 
 // SINGLEQUOTED_? are needed to define CALC_OPTION
-// smarter solutions are welcome
 #define SINGLEQUOTED_a 'a'
 #define SINGLEQUOTED_b 'b'
 #define SINGLEQUOTED_c 'c'
