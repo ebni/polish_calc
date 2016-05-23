@@ -132,6 +132,7 @@ int print_1st_var(const state_t * state)
     break;
   default:
     printf("Variable type: \tUNKNOWN\n");
+    printf("Printing a variable of type %i must be implemented\n", cur_var.type);
   }
 }
 
@@ -174,6 +175,8 @@ void free_all(state_t * state)
     default:
       printf("Unknown type of variable \"%s\"\n",
 	     state->var_list[state->first_empty+i].name);
+      printf("Freeing a variable of type %i must be implemented\n",
+	     state->var_list[state->first_empty+i].type);
     }
     free(state->var_list[state->first_empty+i].name);
   }
@@ -214,7 +217,7 @@ char print_menu(const state_t * state)
     // check if alphabetic character
     if ((buf[0] & 0xDF) >= 'A' && (buf[0] & 0xDF) <= 'Z') {
       // make it lowcase
-      buf[0] |= ' ';
+      buf[0] |= ' ';  //  buf[0] |= 32;  // buf[0] = buf[0] | 0x20;
       break;
     } else
       printf("Command must be an alphabetic character\n");
